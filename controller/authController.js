@@ -8,17 +8,6 @@ const { validationResult, body } = require("express-validator");
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
-exports.validate = method => {
-  switch (method) {
-    case "signup": {
-      return [
-        body("email", "harus dalam bentuk mail").isEmail(),
-        body("password", "password minimal 6").isLength({ min: 6 })
-      ];
-    }
-  }
-};
-
 exports.signup = asyncMiddleware(async (req, res, next) => {
   try {
     const errors = validationResult(req);

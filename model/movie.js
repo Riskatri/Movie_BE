@@ -7,5 +7,5 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.DATE
     }
   });
-  return Comment;
+  return Movie;
 };
